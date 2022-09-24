@@ -2,16 +2,21 @@ import java.util.Scanner;
 
 public class TaskOne implements Execution{
 
+int a;
+int b;
 
+private static void input(Scanner sc, int a){
+    System.out.println("Type a: ");
+   a= sc.nextInt();
+}
     @Override
     public void execution(Scanner sc) {
+input(sc, a);
+input(sc, b);
+        System.out.println("Area: " + getArea(a, b));
+    }
 
-        System.out.println("Type a: ");
-        final int a = sc.nextInt();
-
-        System.out.println("Type b: ");
-        final int b = sc.nextInt();
-
-        System.out.println("Area: " + b*a);
+    public static int getArea(int a, int b) {
+    return a*b;
     }
 }
