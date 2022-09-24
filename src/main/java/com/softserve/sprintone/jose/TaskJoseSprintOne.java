@@ -2,6 +2,8 @@ package com.softserve.sprintone.jose;
 
 import com.softserve.sprintone.exception.TaskException;
 
+import java.io.BufferedReader;
+import java.io.IOException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -12,22 +14,24 @@ public class TaskJoseSprintOne {
 
     /**
      * Task 4 process
-     * @param scanner to read values for task
+     * @param bufferedReader to read values for task
      * @throws TaskException
      */
-    public static void task4(final Scanner scanner) throws TaskException {
+    public static void task4(final BufferedReader bufferedReader) throws TaskException {
         try {
             System.out.println("Type size of the wall in milimiters");
-            final int wallSize = scanner.nextInt();
+            final int wallSize = Integer.parseInt(bufferedReader.readLine());
 
             System.out.println("Type size of the pixel in milimiters");
-            final int pixelSize = scanner.nextInt();
+            final int pixelSize = Integer.parseInt(bufferedReader.readLine());
             final boolean isDivisible = pixelArtsPlanning(wallSize, pixelSize);
             if(isDivisible)
                 System.out.println(" It's fit an exact number of pixels on the wall");
             else
                 System.out.println(" Is not fit an exact number of pixels on the wall");
-        } catch (InputMismatchException inputMismatchException){
+        }catch (IOException e) {
+            throw new TaskException("Please, choose a correct number");
+        }catch (NumberFormatException numberFormatException){
             throw new TaskException("Please, choose a correct number");
         }
     }
@@ -44,14 +48,14 @@ public class TaskJoseSprintOne {
 
     /**
      * Task 4 process
-     * @param scanner to read values for task
+     * @param bufferedReader to read values for task
      */
-    public static void task9(final Scanner scanner){
+    public static void task9(final BufferedReader bufferedReader){
         try {
             System.out.println("Type a number that will be negative");
-            int number = scanner.nextInt();
+            int number = Integer.parseInt(bufferedReader.readLine());
             makeNegativeNumber(number);
-        } catch (InputMismatchException inputMismatchException){
+        } catch (IOException ioException){
             throw new TaskException("Please, choose a correct number");
         }
     }

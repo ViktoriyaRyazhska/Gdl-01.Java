@@ -1,4 +1,5 @@
 Please, choose one task from list below...
+0. exit, type exit word
 1. you-cant-code-under-pressure-number-1	     
 2. function-3-multiplying-two-numbers               		
 3. volume-of-a-cuboid 				     
@@ -10,3 +11,4 @@ Please, choose one task from list below...
 9. return-negative				     
 10. age-range-compatibility-equation 		     
 11. grasshopper-debug				     
+
