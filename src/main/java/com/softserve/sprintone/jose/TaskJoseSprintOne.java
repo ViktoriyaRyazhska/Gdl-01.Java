@@ -57,7 +57,7 @@ public class TaskJoseSprintOne {
     }
 
     private static void makeNegativeNumber(final int number) {
-        if(number>=0)
+        if(number>0)
             System.out.printf("%d", number*(-1));
         else
             System.out.printf("%d", number);

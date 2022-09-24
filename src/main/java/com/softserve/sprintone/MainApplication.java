@@ -36,7 +36,7 @@ public class MainApplication {
     }
 
     /**
-     * @param taskNumber task number that has been choosen by user.
+     * @param taskNumber task number that has been chosen by user.
      */
     private static void loadTask(byte taskNumber) {
         switch (taskNumber) {
