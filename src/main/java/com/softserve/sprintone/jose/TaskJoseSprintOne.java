@@ -28,7 +28,7 @@ public class TaskJoseSprintOne {
             if(isDivisible)
                 System.out.println("It fit an exact number of pixels on the wall");
             else
-                System.out.println("It does not fits an exact number of pixels on the wall");
+                System.out.println("It does not fit an exact number of pixels on the wall");
         }catch (IOException e) {
             throw new TaskException("Please, choose a correct number");
         }catch (NumberFormatException numberFormatException){
@@ -47,7 +47,7 @@ public class TaskJoseSprintOne {
     }
 
     /**
-     * task9 will prompt to the user values that is required for make a negative number.
+     * task9 will prompt to the user values that is required for make a number negative.
      * Task 9 process
      * @param bufferedReader to read values for task
      */
