@@ -17,7 +17,7 @@ public class TaskJoseSprintOne {
      * @param bufferedReader to read values for task
      * @throws TaskException
      */
-    public static void task4(final BufferedReader bufferedReader) throws TaskException {
+    public void task4(final BufferedReader bufferedReader) throws TaskException {
         try {
             System.out.println("Type size of the wall in milimiters");
             final int wallSize = Integer.parseInt(bufferedReader.readLine());
@@ -26,9 +26,9 @@ public class TaskJoseSprintOne {
             final int pixelSize = Integer.parseInt(bufferedReader.readLine());
             final boolean isDivisible = pixelArtsPlanning(wallSize, pixelSize);
             if(isDivisible)
-                System.out.println(" It's fit an exact number of pixels on the wall");
+                System.out.println("It fit an exact number of pixels on the wall");
             else
-                System.out.println("It fits an exact number of pixels on the wall");
+                System.out.println("It does not fits an exact number of pixels on the wall");
         }catch (IOException e) {
             throw new TaskException("Please, choose a correct number");
         }catch (NumberFormatException numberFormatException){
@@ -42,16 +42,16 @@ public class TaskJoseSprintOne {
      * @param pixelSize size of the pixel in millimeters
      * @return true or false if it is possible fit an exact number of pixels on the wall
      */
-    private static boolean pixelArtsPlanning(final int wallSize, final int pixelSize){
+    private boolean pixelArtsPlanning(final int wallSize, final int pixelSize){
         return wallSize % pixelSize == 0;
     }
 
     /**
      * task9 will prompt to the user values that is required for make a negative number.
-     * Task 4 process
+     * Task 9 process
      * @param bufferedReader to read values for task
      */
-    public static void task9(final BufferedReader bufferedReader){
+    public void task9(final BufferedReader bufferedReader){
         try {
             System.out.println("Type a number that will be negative");
             int number = Integer.parseInt(bufferedReader.readLine());
@@ -61,7 +61,7 @@ public class TaskJoseSprintOne {
         }
     }
 
-    private static void makeNegativeNumber(final int number) {
+    private void makeNegativeNumber(final int number) {
         if(number>0)
             System.out.printf("%d", number*(-1));
         else

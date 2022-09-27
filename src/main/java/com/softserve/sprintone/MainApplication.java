@@ -21,13 +21,14 @@ public class MainApplication {
 
     static final File taskList;
     private static byte taskNumber;
+    private static TaskJoseSprintOne taskJoseSprintOne;
 
     static {
         taskListPath = System.getProperty(USER_DIR).concat("\\").concat(QUESTION_LIST);
         taskList = new File(taskListPath);
     }
-
     public static void main(String[] args) {
+        loadTaskResource();
         welcome();
     }
 
@@ -48,19 +49,26 @@ public class MainApplication {
     }
 
     /**
+     * Will load all Task Objects
+     */
+    private static void loadTaskResource() {
+        taskJoseSprintOne = new TaskJoseSprintOne();
+    }
+
+    /**
      * @param taskNumber task number that has been chosen by user.
      */
     private static void loadTask(byte taskNumber) {
 
         switch (taskNumber) {
             case 4:
-                TaskJoseSprintOne.task4(bufferReader);
+                taskJoseSprintOne.task4(bufferReader);
                 break;
             case 9:
-                TaskJoseSprintOne.task9(bufferReader);
+                taskJoseSprintOne.task9(bufferReader);
                 break;
             default:
-                System.out.println("Any number has matched");
+                System.out.println("The specific task has not been implemented");
                 break;
         }
 
