@@ -8,8 +8,12 @@ import java.util.InputMismatchException;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 
+/**
+ * Main application that will print list of question that an user can select;
+ */
 public class MainApplication {
     static final String USER_DIR = "user.dir";
+    static final String QUESTION_LIST = "task-list.txt";
     static final String taskListPath;
     static final Scanner scannerNumbers = new Scanner(System.in);
     static final BufferedReader bufferReader = new BufferedReader(new InputStreamReader(System.in));
@@ -19,7 +23,7 @@ public class MainApplication {
     private static byte taskNumber;
 
     static {
-        taskListPath = System.getProperty(USER_DIR).concat("\\").concat("task-list.txt");
+        taskListPath = System.getProperty(USER_DIR).concat("\\").concat(QUESTION_LIST);
         taskList = new File(taskListPath);
     }
 
@@ -35,9 +39,9 @@ public class MainApplication {
         } catch (IOException e) {
             e.printStackTrace();
         } catch (InputMismatchException inputMismatchException) {
-            System.err.println("You has typed a wrong number.");
+            System.err.println("You have typed a wrong number.");
         } catch (NoSuchElementException noSuchElementException) {
-            System.err.println("You must type a number from list.");
+            System.err.println("You must type a number from the list.");
         } catch (TaskException taskException) {
             System.err.println(taskException.getMessage());
         }
@@ -54,6 +58,9 @@ public class MainApplication {
                 break;
             case 9:
                 TaskJoseSprintOne.task9(bufferReader);
+                break;
+            default:
+                System.out.println("Any number has matched");
                 break;
         }
 

@@ -13,7 +13,7 @@ import java.util.Scanner;
 public class TaskJoseSprintOne {
 
     /**
-     * Task 4 process
+     * Task 4 will pront to the user values that is required for calculate if it fits an exact number of pixels on the wall.
      * @param bufferedReader to read values for task
      * @throws TaskException
      */
@@ -28,7 +28,7 @@ public class TaskJoseSprintOne {
             if(isDivisible)
                 System.out.println(" It's fit an exact number of pixels on the wall");
             else
-                System.out.println(" Is not fit an exact number of pixels on the wall");
+                System.out.println("It fits an exact number of pixels on the wall");
         }catch (IOException e) {
             throw new TaskException("Please, choose a correct number");
         }catch (NumberFormatException numberFormatException){
@@ -47,6 +47,7 @@ public class TaskJoseSprintOne {
     }
 
     /**
+     * task9 will prompt to the user values that is required for make a negative number.
      * Task 4 process
      * @param bufferedReader to read values for task
      */
