@@ -108,16 +108,115 @@ public class TaskJoseSprintOne {
             System.out.println("Type a second divisible number");
             int secondDivisibleNumber = Integer.parseInt(bufferedReader.readLine());
 
-            if (isDivisible(number, firstDivisibleNumber, secondDivisibleNumber))
-                System.out.println(String.format("true because %d is divisble by %d and %d", number, firstDivisibleNumber, secondDivisibleNumber));
-            else
-                System.out.println(String.format("false because %d is not divisble by %d and %d", number, firstDivisibleNumber, secondDivisibleNumber));
+            if(number > 0 || firstDivisibleNumber >0 || secondDivisibleNumber >0 ) {
+                if (isDivisible(number, firstDivisibleNumber, secondDivisibleNumber))
+                    System.out.println(String.format("true because %d is divisble by %d and %d", number, firstDivisibleNumber, secondDivisibleNumber));
+                else
+                    System.out.println(String.format("false because %d is not divisble by %d and %d", number, firstDivisibleNumber, secondDivisibleNumber));
+            }else
+                throw new TaskException("Numbers negatives are not allowed");
         }catch (IOException ioException){
-            ioException.printStackTrace();
+            throw new TaskException("Please, choose a correct number");
         }
     }
 
     public boolean isDivisible(final int number, final int firstDivisibleNumber, final int secondDivisibleNumber){
         return ((number % firstDivisibleNumber) == 0) && ((number % secondDivisibleNumber) == 0);
+    }
+
+    /**
+     * Task 4 has four basic arithmetic operations
+     * @param bufferReader
+     */
+    public void task24(BufferedReader bufferReader) {
+        try {
+            System.out.println("Type arithmetic operator");
+            final String operator = bufferReader.readLine();
+
+            System.out.println("Type first value");
+            final int firstValue = Integer.parseInt(bufferReader.readLine());
+
+            System.out.println("Type second value");
+            final int secondValue = Integer.parseInt(bufferReader.readLine());
+            System.out.println("The result is: "+isValidOperator(operator, firstValue, secondValue));
+        }catch (IOException ioException){
+            throw new TaskException("Please, choose a correct number");
+        }
+    }
+
+    /**
+     * This function check if the operator that has been typed is valid and return the result of arithmetic operation
+     * @param operator can be +, -, *, /
+     */
+    private int isValidOperator(String operator, int firstValue, int secondValue) {
+        switch (operator){
+            case "+":
+                return firstValue+secondValue;
+            case "-":
+                return firstValue-secondValue;
+            case "*":
+                return firstValue*secondValue;
+            case "/":
+                if(secondValue == 0)
+                    throw new TaskException("Denominator with value 0 is not allowed");
+                return firstValue/secondValue;
+            default:
+                throw new TaskException("The specific operator has not been implemented");
+
+
+        }
+    }
+
+    /**
+     * Task 9 will print in console the number in words.
+     * @param bufferReader
+     */
+    public void task29(BufferedReader bufferReader) {
+        try {
+            System.out.println("Type a number between 0-9");
+            int number = Integer.parseInt(bufferReader.readLine());
+            printNumberInWords(number);
+        }catch (IOException ioException){
+            throw new TaskException("Please, choose a correct number");
+        }
+    }
+
+    /**
+     * This function will print in console the word of a some number
+     * @param number
+     */
+    private void printNumberInWords(int number) {
+        switch (number){
+            case 0:
+                System.out.println("Zero");
+                break;
+            case 1:
+                System.out.println("One");
+                break;
+            case 2:
+                System.out.println("Two");
+                break;
+            case 3:
+                System.out.println("Three");
+                break;
+            case 4:
+                System.out.println("Four");
+                break;
+            case 5:
+                System.out.println("Five");
+                break;
+            case 6:
+                System.out.println("Six");
+                break;
+            case 7:
+                System.out.println("Seven");
+                break;
+            case 8:
+                System.out.println("Eight");
+                break;
+            case 9:
+                System.out.println("Nine");
+                break;
+        }
     }
 }
