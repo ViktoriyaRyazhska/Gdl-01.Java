@@ -1,6 +1,7 @@
 package com.softserve.sprintone;
 
 import com.softserve.sprintone.exception.TaskException;
+import com.softserve.sprintone.ivan.TaskIvanSprintOne;
 import com.softserve.sprintone.jose.TaskJoseSprintOne;
 
 import java.io.*;
@@ -22,6 +23,7 @@ public class MainApplication {
     static final File taskList;
     private static byte taskNumber;
     private static TaskJoseSprintOne taskJoseSprintOne;
+    private static TaskIvanSprintOne taskIvanSprintOne;
 
     static {
         taskListPath = System.getProperty(USER_DIR).concat("\\").concat(QUESTION_LIST);
@@ -53,6 +55,7 @@ public class MainApplication {
      */
     private static void loadTaskResource() {
         taskJoseSprintOne = new TaskJoseSprintOne();
+        taskIvanSprintOne = new TaskIvanSprintOne();
     }
 
     /**
@@ -61,11 +64,44 @@ public class MainApplication {
     private static void loadTask(byte taskNumber) {
 
         switch (taskNumber) {
+            case 3:
+                taskIvanSprintOne.task3(scannerNumbers);
+                break;
             case 4:
                 taskJoseSprintOne.task4(bufferReader);
                 break;
+            case 8:
+                taskIvanSprintOne.task8(scannerNumbers);
+                break;
             case 9:
                 taskJoseSprintOne.task9(bufferReader);
+                break;
+            case 13:
+                taskIvanSprintOne.task13(scannerNumbers);
+                break;
+            case 18:
+                taskIvanSprintOne.task18(scannerNumbers);
+                break;
+            case 23:
+                taskIvanSprintOne.task23();
+                break;
+            case 28:
+                taskIvanSprintOne.task28(scannerNumbers);
+                break;
+            case 33:
+                taskIvanSprintOne.task33(scannerNumbers);
+                break;
+            case 38:
+                taskIvanSprintOne.task38(scannerNumbers);
+                break;
+            case 43:
+                taskIvanSprintOne.task43(scannerNumbers);
+                break;
+            case 49:
+                taskIvanSprintOne.task49(scannerStrings);
+                break;
+            case 68:
+                taskIvanSprintOne.task68(scannerStrings);
                 break;
             default:
                 System.out.println("The specific task has not been implemented");
@@ -75,7 +111,7 @@ public class MainApplication {
         System.out.println("Please, press any key");
         final String taskOption = scannerStrings.nextLine();
 
-        if (!taskOption.equals("0") || !taskOption.equals("exit"))
+        if (!taskOption.equals("0") && !taskOption.equals("exit"))
             welcome();
     }
 
@@ -89,7 +125,6 @@ public class MainApplication {
         String st;
 
         while ((st = br.readLine()) != null)
-
             System.out.println(st);
     }
 }
