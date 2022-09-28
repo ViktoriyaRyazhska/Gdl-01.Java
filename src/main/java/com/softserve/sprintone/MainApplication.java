@@ -1,6 +1,9 @@
 package com.softserve.sprintone;
 
 import com.softserve.sprintone.exception.TaskException;
+import com.softserve.sprintone.joceline.BinaryConverter;
+import com.softserve.sprintone.joceline.CelsiusConverter;
+import com.softserve.sprintone.joceline.DoubleInteger;
 import com.softserve.sprintone.jose.TaskJoseSprintOne;
 
 import java.io.*;
@@ -22,6 +25,9 @@ public class MainApplication {
     static final File taskList;
     private static byte taskNumber;
     private static TaskJoseSprintOne taskJoseSprintOne;
+    private static DoubleInteger doubleInteger;
+    private static BinaryConverter binaryConverter;
+    private static CelsiusConverter celsiusConverter;
 
     static {
         taskListPath = System.getProperty(USER_DIR).concat("\\").concat(QUESTION_LIST);
@@ -53,6 +59,9 @@ public class MainApplication {
      */
     private static void loadTaskResource() {
         taskJoseSprintOne = new TaskJoseSprintOne();
+        doubleInteger = new DoubleInteger();
+        binaryConverter = new BinaryConverter();
+        celsiusConverter = new CelsiusConverter();
     }
 
     /**
@@ -61,11 +70,20 @@ public class MainApplication {
     private static void loadTask(byte taskNumber) {
 
         switch (taskNumber) {
+            case 1:
+                doubleInteger.task1(bufferReader);
+                break;
             case 4:
                 taskJoseSprintOne.task4(bufferReader);
                 break;
+            case 6:
+                binaryConverter.task6(bufferReader);
+                break;
             case 9:
                 taskJoseSprintOne.task9(bufferReader);
+                break;
+            case 11:
+                celsiusConverter.task11(bufferReader);
                 break;
             default:
                 System.out.println("The specific task has not been implemented");
