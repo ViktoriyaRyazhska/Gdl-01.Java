@@ -5,7 +5,9 @@ import com.softserve.sprintone.jose.util.Fraction;
 
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.InputMismatchException;
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -218,5 +220,16 @@ public class TaskJoseSprintOne {
                 System.out.println("Nine");
                 break;
         }
+    }
+
+    /**
+     * Task 34 will calculate the average for a student
+     * @param bufferReader
+     */
+    public void task34(BufferedReader bufferReader) {
+        List<Double> notes = Arrays.asList(5.6D,9.9D,6.7D,10D,9D,7.2D);
+        double suma = notes.stream().reduce(0D, Double::sum);
+        double reformat = Math.round(suma/notes.size());
+        System.out.println("The average is: ".concat(String.valueOf(reformat)));
     }
 }

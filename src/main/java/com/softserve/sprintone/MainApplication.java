@@ -77,6 +77,8 @@ public class MainApplication {
                 break;
             case 29:
                 taskJoseSprintOne.task29(bufferReader);
+            case 34:
+                taskJoseSprintOne.task34(bufferReader);
             default:
                 System.out.println("The specific task has not been implemented");
                 break;
