@@ -15,7 +15,6 @@ public class MainApplication {
     static final String USER_DIR = "user.dir";
     static final String QUESTION_LIST = "task-list.txt";
     static final String taskListPath;
-    static final Scanner scannerNumbers = new Scanner(System.in);
     static final BufferedReader bufferReader = new BufferedReader(new InputStreamReader(System.in));
     static final Scanner scannerStrings = new Scanner(System.in);
 
@@ -67,6 +66,31 @@ public class MainApplication {
             case 9:
                 taskJoseSprintOne.task9(bufferReader);
                 break;
+            case 14:
+                taskJoseSprintOne.task14(bufferReader);
+                break;
+            case 19:
+                taskJoseSprintOne.task19(bufferReader);
+                break;
+            case 24:
+                taskJoseSprintOne.task24(bufferReader);
+                break;
+            case 29:
+                taskJoseSprintOne.task29(bufferReader);
+            case 34:
+                taskJoseSprintOne.task34(bufferReader);
+                break;
+            case 39:
+                taskJoseSprintOne.task39(bufferReader);
+                break;
+            case 44:
+                taskJoseSprintOne.task44(bufferReader);
+                break;
+            case 50:
+                taskJoseSprintOne.task50(bufferReader);
+                break;
+            case 54:
+                taskJoseSprintOne.task54(bufferReader);
             default:
                 System.out.println("The specific task has not been implemented");
                 break;
