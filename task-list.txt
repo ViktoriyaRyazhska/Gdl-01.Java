@@ -10,5 +10,67 @@ Please, choose one task from list below...
 8. century-from-year				     
 9. return-negative				     
 10. age-range-compatibility-equation 		     
-11. grasshopper-debug				     
+11. grasshopper-debug
+12.lombok-encapsulation
+13.fixme-static-electrickery
+14.fractions-class
+15.simple-drawing-board
+16.two-fighters-one-winner
+17.building-blocks
+18.opposite-number
+19.is-n-divisible-by-x-and-y
+20.convert-a-boolean-to-a-string
+21.do-i-get-a-bonus
+22.how-old-will-i-be-in-2099
+23.rock-paper-scissors
+24.basic-mathematical-operations
+25.opposites-attracttrainjava
+26.convert-boolean-values-to-strings-yes-or-no
+27.will-there-be-enough-space
+28.the-modulo-3-sequence
+29.switch-it-up
+30.thinkful-logic-drills-traffic-light
+31.transportation-on-vacation
+32.string-repeat
+33.cat-years-dog-years
+34.get-the-mean-of-an-array
+35.beginner-lost-without-a-map
+36.counting-sheep-dot-dot-dot
+37.reversed-sequence
+38.how-good-are-you-really
+39.beginner-reduce-but-grow
+40.sum-of-positive
+41.my-head-is-at-the-wrong-end
+42.twice-as-old
+43.find-nearest-square-number
+44.grasshopper-summation
+45.gap-in-primes
+46.21-sticks
+47.basic-subclasses-adam-and-eve
+48.rotations-and-reflections-i
+49.l3375p34k
+50.tdd-area-calculations
+51.convert-a-number-to-a-string
+52.reversed-strings
+53.welcome-to-the-city
+54.opposite-number
+55.fixme-replace-all-dots
+56.are-you-playing-banjo
+57.remove-string-spaces
+58.triple-trouble-2
+59.find-the-position
+60.fake-binary
+61.parse-nice-int-from-char-problem
+62.grasshopper-debug
+63.abbreviate-a-two-word-name
+64.http:www.codewars.comkataall-star-code-challenge-number-18
+65.sort-and-star
+66.correct-the-mistakes-of-the-character-recognition-software
+67.alternating-case-<-equals->-alternating-case
+68.exclamation-marks-series-number-6-remove-n-exclamation-marks-in-the-sentence-from-left-to-right
+69.push-a-hash-slash-an-object-into-array
+70.unfinished-loop-bug-fixing-number-1
+71.filtering-even-numbers-bug-fixes
+72.interactive-dictionary
+
 

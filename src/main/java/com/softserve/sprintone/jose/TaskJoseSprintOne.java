@@ -1,6 +1,7 @@
 package com.softserve.sprintone.jose;
 
 import com.softserve.sprintone.exception.TaskException;
+import com.softserve.sprintone.jose.util.Fraction;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -68,5 +69,55 @@ public class TaskJoseSprintOne {
             System.out.printf("%d", number);
     }
 
+    /**
+     * task 14 will calculate and print fraction of two numbers
+     * @param bufferedReader
+     */
+    public void task14(final BufferedReader bufferedReader) {
+        try {
+            System.out.println("Type a number that will be a numerator");
+            int firstNumerator = Integer.parseInt(bufferedReader.readLine());
+            System.out.println("Type a number that will be a denominator");
+            int firstDenominator = Integer.parseInt(bufferedReader.readLine());
 
+            //Fraction fraction = new Fraction(firstNumerator/ firstDenominator);
+            //System.out.println(fraction.toString());
+            /*System.out.println("Type a number that will be a numerator");
+            int secondNumerator = Integer.parseInt(bufferedReader.readLine());
+            System.out.println("Type a number that will be a denominator");
+            int secondDenominator = Integer.parseInt(bufferedReader.readLine());*/
+
+
+        } catch (IOException inputMismatchException) {
+            System.err.println("");
+        }
+    }
+
+    /**
+     * Task 19 will check if a number n is divisible by two numbers
+     * @param bufferedReader
+     */
+    public void task19(final BufferedReader bufferedReader){
+        try {
+            System.out.println("Type a number that will check by two numbers");
+            int number = Integer.parseInt(bufferedReader.readLine());
+
+            System.out.println("Type a first divisible number");
+            int firstDivisibleNumber = Integer.parseInt(bufferedReader.readLine());
+
+            System.out.println("Type a second divisible number");
+            int secondDivisibleNumber = Integer.parseInt(bufferedReader.readLine());
+
+            if (isDivisible(number, firstDivisibleNumber, secondDivisibleNumber))
+                System.out.println(String.format("true because %d is divisble by %d and %d", number, firstDivisibleNumber, secondDivisibleNumber));
+            else
+                System.out.println(String.format("false because %d is not divisble by %d and %d", number, firstDivisibleNumber, secondDivisibleNumber));
+        }catch (IOException ioException){
+            ioException.printStackTrace();
+        }
+    }
+
+    public boolean isDivisible(final int number, final int firstDivisibleNumber, final int secondDivisibleNumber){
+        return ((number % firstDivisibleNumber) == 0) && ((number % secondDivisibleNumber) == 0);
+    }
 }
