@@ -1,10 +1,7 @@
 package com.softserve.sprintone;
 
 import com.softserve.sprintone.exception.TaskException;
-import com.softserve.sprintone.joceline.BinaryConverter;
-import com.softserve.sprintone.joceline.CelsiusConverter;
-import com.softserve.sprintone.joceline.DoubleInteger;
-import com.softserve.sprintone.joceline.TwoFighters;
+import com.softserve.sprintone.joceline.*;
 import com.softserve.sprintone.jose.TaskJoseSprintOne;
 
 import java.io.*;
@@ -30,6 +27,7 @@ public class MainApplication {
     private static BinaryConverter binaryConverter;
     private static CelsiusConverter celsiusConverter;
     private static TwoFighters twoFighters;
+    private static SalaryBonus salaryBonus;
 
     static {
         taskListPath = System.getProperty(USER_DIR).concat("\\").concat(QUESTION_LIST);
@@ -65,6 +63,7 @@ public class MainApplication {
         binaryConverter = new BinaryConverter();
         celsiusConverter = new CelsiusConverter();
         twoFighters = new TwoFighters();
+        salaryBonus = new SalaryBonus();
     }
 
     /**
@@ -91,6 +90,8 @@ public class MainApplication {
             case 16:
                 twoFighters.task16(bufferReader);
                 break;
+            case 21:
+                salaryBonus.task21(bufferReader);
             default:
                 System.out.println("The specific task has not been implemented");
                 break;
