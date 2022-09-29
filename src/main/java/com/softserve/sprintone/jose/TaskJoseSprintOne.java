@@ -304,4 +304,113 @@ public class TaskJoseSprintOne {
     private int makeOpposite(int number) {
         return number*(-1);
     }
+
+    /**
+     * Task 59 will print in console the alphabet letter position
+     * @param bufferReader
+     */
+    public void task59(BufferedReader bufferReader) {
+        HashMap<String, Integer> alphabet = loadAlphabet();
+        try {
+            System.out.println("Type a letter of the alphabet");
+            String letter = bufferReader.readLine();
+             Integer index = alphabet.get(letter.toLowerCase());
+             if(Objects.isNull(index))
+                throw new TaskException("The specific letter has not founded");
+             else
+                 System.out.println("The index is ".concat(String.valueOf(index)));
+        } catch (IOException e) {
+            throw new TaskException("Please, choose a correct letter");
+        }
+
+    }
+
+    /**
+     * Will return a hashmap with letter and it's possition
+     * @return
+     */
+    private HashMap<String, Integer> loadAlphabet() {
+        HashMap<String, Integer> alphabet = new HashMap<>();
+        alphabet.put("a", 1);
+        alphabet.put("b", 2);
+        alphabet.put("c", 3);
+        alphabet.put("d", 4);
+        alphabet.put("e", 5);
+        alphabet.put("f", 6);
+        alphabet.put("g", 7);
+        alphabet.put("h", 8);
+        alphabet.put("i", 9);
+        alphabet.put("j", 10);
+        alphabet.put("k", 11);
+        alphabet.put("l", 12);
+        alphabet.put("m", 13);
+        alphabet.put("n", 14);
+        alphabet.put("o", 15);
+        alphabet.put("p", 16);
+        alphabet.put("q", 17);
+        alphabet.put("r", 18);
+        alphabet.put("s", 19);
+        alphabet.put("t", 20);
+        alphabet.put("u", 21);
+        alphabet.put("v", 22);
+        alphabet.put("w", 23);
+        alphabet.put("z", 24);
+        return  alphabet;
+    }
+
+    /**
+     * Task 64 will count the occurrences of a letter given
+     * @param bufferReader
+     */
+    public void task64(BufferedReader bufferReader) {
+        HashMap<String, Integer> alphabet = loadAlphabet();
+        try {
+            System.out.println("Type a word");
+            String word = bufferReader.readLine();
+            System.out.println("Type a letter of the alphabet");
+            String letter = bufferReader.readLine();
+            Integer index = alphabet.get(letter);
+            if(Objects.nonNull(index)) {
+                int occurrencesFounded = findOccurrences(word,letter);
+                System.out.println("The total occurrences is ".concat(String.valueOf(occurrencesFounded)));
+            }else
+                throw new TaskException("The specific letter has not founded");
+        }catch (IOException ioException){
+            throw new TaskException("Please, choose a correct letter");
+        }
+    }
+
+    /**
+     * Will return the total occurrences of a letter
+     * @param word that will use to search letter occurrences
+     * @param letter will find into word
+     * @return total occurrences
+     */
+    private int findOccurrences(String word, String letter) {
+        String str = word;
+        int count = 0;
+        int startFrom = 0;
+        for (; ; ) {
+            int index = str.indexOf(letter, startFrom);
+
+            if (index >= 0) {
+                count = count + 1;
+                startFrom = index + 1;
+            } else {
+                break;
+            }
+
+        }
+        return count;
+    }
+
+    /**
+     * Task 69 will put a String object into ArrayList
+     * @param bufferReader
+     */
+    public void task69(BufferedReader bufferReader) {
+        List<String> stringList = new ArrayList<>();
+        stringList.add("Some String object");
+        System.out.println("The object of a String list is --"+stringList.get(0)+"--");
+    }
 }
