@@ -29,6 +29,9 @@ public class MainApplication {
     private static TwoFighters twoFighters;
     private static SalaryBonus salaryBonus;
     private static BoolToString boolToString;
+    private static RentalCar rentalCar;
+    private static ConvertIntToString convertIntToString;
+    private static PlayBanjo playBanjo;
 
     static {
         taskListPath = System.getProperty(USER_DIR).concat("\\").concat(QUESTION_LIST);
@@ -66,6 +69,9 @@ public class MainApplication {
         twoFighters = new TwoFighters();
         salaryBonus = new SalaryBonus();
         boolToString = new BoolToString();
+        rentalCar = new RentalCar();
+        convertIntToString = new ConvertIntToString();
+        playBanjo = new PlayBanjo();
     }
 
     /**
@@ -97,6 +103,15 @@ public class MainApplication {
                 break;
             case 26:
                 boolToString.task26(bufferReader);
+                break;
+            case 31:
+                rentalCar.task31(bufferReader);
+                break;
+            case 51:
+                convertIntToString.task51(bufferReader);
+                break;
+            case 56:
+                playBanjo.task56(bufferReader);
                 break;
             default:
                 System.out.println("The specific task has not been implemented");

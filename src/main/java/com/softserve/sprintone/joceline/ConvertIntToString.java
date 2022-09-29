@@ -6,22 +6,21 @@ import java.io.IOException;
 /**
  * @author Joceline
  */
-public class DoubleIntegers {
+public class ConvertIntToString {
     /**
-     * This is Task 1 that it takes a number and doubles it.
+     * Task 51. This task takes the number (Int) that user enters to convert to String
      *
-     * @param bufferedReader to read the int value that user choose to double it.
+     * @param bufferedReader it read the Integer value that user enters.
      */
-    public void task1(BufferedReader bufferedReader) {
+    public void task51(BufferedReader bufferedReader) {
         boolean loopCheck;
         do {
             loopCheck = false;
             try {
-                System.out.println("Enter the number to double it: ");
+                System.out.println("Enter the number to convert to String: ");
                 int number = Integer.parseInt(bufferedReader.readLine());
 
-                DoubleInteger(number);
-
+                System.out.println(numberToString(number));
             } catch (IOException e) {
                 loopCheck = true;
                 System.out.println("Enter a valid answer");
@@ -32,14 +31,7 @@ public class DoubleIntegers {
         } while (loopCheck);
     }
 
-    /**
-     * @param number number entered by the user to double it.
-     */
-    private void DoubleInteger(int number) {
-        if (number >= 0) {
-            System.out.println("The Double is: " + number * 2);
-        } else {
-            System.out.println("You have to enter a valid number");
-        }
+    public static String numberToString(int number) {
+        return ""+number;
     }
 }

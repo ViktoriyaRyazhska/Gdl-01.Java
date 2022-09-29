@@ -10,7 +10,7 @@ public class CelsiusConverter {
     /**
      * This is task 11. This task take a Fahrenheit temperature to convert to Celsius temperature.
      *
-     * @param bufferedReader to read values entered by user.
+     * @param bufferedReader to read the double value that user choose to convert from Fahrenheit to Celsius.
      */
     public void task11(BufferedReader bufferedReader) {
         boolean loopCheck;

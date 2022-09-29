@@ -10,7 +10,7 @@ public class BinaryConverter {
     /**
      * This is Task 6 that it takes a number to convert to binary.
      *
-     * @param bufferedReader to read values entered by user.
+     * @param bufferedReader to read the number selected to convert to binary.
      */
     public void task6(BufferedReader bufferedReader) {
         boolean loopCheck;
