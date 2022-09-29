@@ -78,10 +78,10 @@ public class MainApplication {
             case 29:
                 taskJoseSprintOne.task29(bufferReader);
             case 34:
-                taskJoseSprintOne.task34(bufferReader);
+                taskJoseSprintOne.task34();
                 break;
             case 39:
-                taskJoseSprintOne.task39(bufferReader);
+                taskJoseSprintOne.task39();
                 break;
             case 44:
                 taskJoseSprintOne.task44(bufferReader);
