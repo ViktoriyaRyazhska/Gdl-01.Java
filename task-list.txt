@@ -1,14 +1,17 @@
 Please, choose one task from list below...
 0. exit, type exit word
-1. you-cant-code-under-pressure-number-1	     
-2. function-3-multiplying-two-numbers               		
-3. volume-of-a-cuboid 				     
-4. hinkful-number-drills-pixelart-planning    	     
-5. jennys-secret-message			     
-6. convert-to-binary				     
-7. beginner-series-number-2-clock		     
-8. century-from-year				     
-9. return-negative				     
-10. age-range-compatibility-equation 		     
-11. grasshopper-debug				     
-
+2. function-3-multiplying-two-numbers
+7. beginner-series-number-2-clock
+12. Lombok Encapsulation
+17. Building blocks
+22. How old will I be in 2099?
+27. Will there be enough space?
+32. String repeat
+37. Reversed sequence
+42. Twice as old
+48. Rotations and reflections I
+52. Reversed Strings
+57. Remove String Spaces
+62. Grasshopper - Debug
+67. altERnaTIng cAsE <=> ALTerNAtiNG CaSe
+71. Filtering even numbers (Bug Fixes)
