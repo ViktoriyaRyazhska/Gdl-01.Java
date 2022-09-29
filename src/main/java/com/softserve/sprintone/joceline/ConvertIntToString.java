@@ -17,6 +17,7 @@ public class ConvertIntToString {
         do {
             loopCheck = false;
             try {
+                System.out.println("Task num 51. This task converts an int to String");
                 System.out.println("Enter the number to convert to String: ");
                 int number = Integer.parseInt(bufferedReader.readLine());
 

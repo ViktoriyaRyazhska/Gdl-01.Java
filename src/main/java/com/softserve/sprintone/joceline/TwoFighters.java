@@ -17,6 +17,7 @@ public class TwoFighters {
         do {
             loopCheck = false;
             try {
+                System.out.println("Task num 16. This task is about a fight of two, choose your fighters!");
                 System.out.println("Enter a name for the first fighter: ");
                 String fighter1Name = bufferedReader.readLine();
                 System.out.println("Enter the health for the first fighter: ");

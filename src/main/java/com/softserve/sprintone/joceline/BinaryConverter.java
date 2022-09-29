@@ -17,6 +17,7 @@ public class BinaryConverter {
         do {
             loopCheck = false;
             try {
+                System.out.println("Task num 6. This task takes a number to convert to binary");
                 System.out.println("Enter a number to convert to binary ");
                 int number = Integer.parseInt(bufferedReader.readLine());
                 System.out.println(Integer.valueOf(Integer.toBinaryString(number)));

@@ -2,12 +2,13 @@ package com.softserve.sprintone.joceline;
 
 import java.io.BufferedReader;
 import java.io.IOException;
+
 /**
  * @author Joceline
  */
 public class PlayBanjo {
     /**
-     * This is Task 56. A function which answers the question "Are you playing banjo?".
+     * This is Task 56. This task answers the question "Are you playing banjo?".
      * If your name starts with the letter "R" or lower case "r", you are playing banjo!
      *
      * @param bufferedReader to read the String value of your name.
@@ -17,6 +18,7 @@ public class PlayBanjo {
         do {
             loopCheck = false;
             try {
+                System.out.println("Task num 56. This task will tell you if you're playing a banjo");
                 System.out.println("Enter your name to know if you are playing banjo ");
                 String name = bufferedReader.readLine();
 

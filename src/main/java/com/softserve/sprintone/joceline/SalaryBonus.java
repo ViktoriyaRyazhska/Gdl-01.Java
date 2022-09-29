@@ -17,6 +17,7 @@ public class SalaryBonus {
         do {
             loopCheck = false;
             try {
+                System.out.println("Task num 21. This task calculates the total salary based on bonus");
                 System.out.println("Enter your salary: ");
                 int salary = Integer.parseInt(bufferedReader.readLine());
 

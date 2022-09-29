@@ -17,6 +17,7 @@ public class RentalCar {
         do {
             loopCheck = false;
             try {
+                System.out.println("Task num 31. This task calculates the price of a rental car");
                 System.out.println("Enter the number of days to rent the car ");
                 int RentedDays = Integer.parseInt(bufferedReader.readLine());
 

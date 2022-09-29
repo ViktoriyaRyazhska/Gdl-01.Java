@@ -32,6 +32,9 @@ public class MainApplication {
     private static RentalCar rentalCar;
     private static ConvertIntToString convertIntToString;
     private static PlayBanjo playBanjo;
+    private static ConvertStringToInt convertStringToInt;
+    private static CharacterRecognition characterRecognition;
+    private static CountLoop countLoop;
 
     static {
         taskListPath = System.getProperty(USER_DIR).concat("\\").concat(QUESTION_LIST);
@@ -72,6 +75,9 @@ public class MainApplication {
         rentalCar = new RentalCar();
         convertIntToString = new ConvertIntToString();
         playBanjo = new PlayBanjo();
+        convertStringToInt = new ConvertStringToInt();
+        characterRecognition = new CharacterRecognition();
+        countLoop = new CountLoop();
     }
 
     /**
@@ -112,6 +118,15 @@ public class MainApplication {
                 break;
             case 56:
                 playBanjo.task56(bufferReader);
+                break;
+            case 61:
+                convertStringToInt.task61(bufferReader);
+                break;
+            case 66:
+                characterRecognition.task66(bufferReader);
+                break;
+            case 70:
+                countLoop.task70(bufferReader);
                 break;
             default:
                 System.out.println("The specific task has not been implemented");

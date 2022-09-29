@@ -17,6 +17,7 @@ public class DoubleIntegers {
         do {
             loopCheck = false;
             try {
+                System.out.println("Task num 1. This task doubles a number");
                 System.out.println("Enter the number to double it: ");
                 int number = Integer.parseInt(bufferedReader.readLine());
 

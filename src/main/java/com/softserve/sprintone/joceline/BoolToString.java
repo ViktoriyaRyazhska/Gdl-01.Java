@@ -18,6 +18,7 @@ public class BoolToString {
             loopCheck = false;
             int option;
             try {
+                System.out.println("Task num 26. This task takes a boolean variable and it prints YES or NO depending on TRUE or False");
                 System.out.println("Enter number to select\n1. True\n2. False");
                 option = Integer.parseInt(bufferedReader.readLine());
 

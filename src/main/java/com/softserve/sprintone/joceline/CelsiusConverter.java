@@ -17,6 +17,7 @@ public class CelsiusConverter {
         do {
             loopCheck = false;
             try {
+                System.out.println("Task num 11. This task take a Fahrenheit temperature to convert to Celsius temperature");
                 System.out.println("Enter a Fahrenheit temperature to convert to Celsius ");
                 double temperature = Double.parseDouble(bufferedReader.readLine());
 
