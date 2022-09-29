@@ -7,5 +7,10 @@ public class MainApplication {
 
         TaskOne taskOne = new TaskOne();
         taskOne.execution(sc);
+
+        TaskFive taskFive = new TaskFive();
+        taskFive.taskFive(sc);
+
+
     }
 }
