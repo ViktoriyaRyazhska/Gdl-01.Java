@@ -20,7 +20,7 @@ public class BinaryConverter {
                 System.out.println("Task num 6. This task takes a number to convert to binary");
                 System.out.println("Enter a number to convert to binary ");
                 int number = Integer.parseInt(bufferedReader.readLine());
-                System.out.println(Integer.valueOf(Integer.toBinaryString(number)));
+                System.out.println(toBinary(number));
 
             } catch (IOException ioException) {
                 loopCheck = true;
@@ -30,5 +30,13 @@ public class BinaryConverter {
                 System.out.println("Enter a valid number");
             }
         } while (loopCheck);
+    }
+
+    /**
+     *
+     * @param number entered by the user to convert it to binary.
+     */
+    public static int toBinary(int number) {
+        return Integer.valueOf(Integer.toBinaryString(number));
     }
 }

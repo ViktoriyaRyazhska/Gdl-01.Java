@@ -35,6 +35,7 @@ public class MainApplication {
     private static ConvertStringToInt convertStringToInt;
     private static CharacterRecognition characterRecognition;
     private static CountLoop countLoop;
+    private static God god;
 
     static {
         taskListPath = System.getProperty(USER_DIR).concat("\\").concat(QUESTION_LIST);
@@ -78,6 +79,7 @@ public class MainApplication {
         convertStringToInt = new ConvertStringToInt();
         characterRecognition = new CharacterRecognition();
         countLoop = new CountLoop();
+        god = new God();
     }
 
     /**
@@ -112,6 +114,9 @@ public class MainApplication {
                 break;
             case 31:
                 rentalCar.task31(bufferReader);
+                break;
+            case 47:
+                god.task47();
                 break;
             case 51:
                 convertIntToString.task51(bufferReader);
