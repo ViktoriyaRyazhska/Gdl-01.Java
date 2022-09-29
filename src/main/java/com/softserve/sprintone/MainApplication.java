@@ -23,11 +23,12 @@ public class MainApplication {
     static final File taskList;
     private static byte taskNumber;
     private static TaskJoseSprintOne taskJoseSprintOne;
-    private static DoubleInteger doubleInteger;
+    private static DoubleIntegers doubleIntegers;
     private static BinaryConverter binaryConverter;
     private static CelsiusConverter celsiusConverter;
     private static TwoFighters twoFighters;
     private static SalaryBonus salaryBonus;
+    private static BoolToString boolToString;
 
     static {
         taskListPath = System.getProperty(USER_DIR).concat("\\").concat(QUESTION_LIST);
@@ -59,11 +60,12 @@ public class MainApplication {
      */
     private static void loadTaskResource() {
         taskJoseSprintOne = new TaskJoseSprintOne();
-        doubleInteger = new DoubleInteger();
+        doubleIntegers = new DoubleIntegers();
         binaryConverter = new BinaryConverter();
         celsiusConverter = new CelsiusConverter();
         twoFighters = new TwoFighters();
         salaryBonus = new SalaryBonus();
+        boolToString = new BoolToString();
     }
 
     /**
@@ -73,7 +75,7 @@ public class MainApplication {
 
         switch (taskNumber) {
             case 1:
-                doubleInteger.task1(bufferReader);
+                doubleIntegers.task1(bufferReader);
                 break;
             case 4:
                 taskJoseSprintOne.task4(bufferReader);
@@ -92,6 +94,10 @@ public class MainApplication {
                 break;
             case 21:
                 salaryBonus.task21(bufferReader);
+                break;
+            case 26:
+                boolToString.task26(bufferReader);
+                break;
             default:
                 System.out.println("The specific task has not been implemented");
                 break;

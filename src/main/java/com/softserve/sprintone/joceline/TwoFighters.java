@@ -1,7 +1,5 @@
 package com.softserve.sprintone.joceline;
 
-import com.softserve.sprintone.exception.TaskException;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 
@@ -11,12 +9,13 @@ import java.io.IOException;
 public class TwoFighters {
     /**
      * This is task 16. This task is about a fight of two, user have to enter two fighters to have a winner!.
-     * @param bufferedReader to read values.
-     * @throws TaskException to check that values are correct.
+     *
+     * @param bufferedReader to read values entered by user.
      */
-    public void task16(BufferedReader bufferedReader) throws TaskException {
-        boolean loopCheck = false;
-        do{
+    public void task16(BufferedReader bufferedReader){
+        boolean loopCheck;
+        do {
+            loopCheck = false;
             try {
                 System.out.println("Enter a name for the first fighter: ");
                 String fighter1Name = bufferedReader.readLine();
@@ -66,13 +65,14 @@ public class TwoFighters {
                 loopCheck = true;
                 System.out.println("Enter a valid answers");
             }
-        }while (loopCheck);
+        } while (loopCheck);
     }
 
     /**
      * This method is used to get the winner of the fight checking the health of both.
-     * @param fighter1 It is the fighter one that the user choose.
-     * @param fighter2 It is the fighter two that the user choose.
+     *
+     * @param fighter1      It is the fighter one that the user choose.
+     * @param fighter2      It is the fighter two that the user choose.
      * @param firstAttacker this is a String variable that the user select to choose un fighter to attack first.
      * @return it has to return the winner of the fight.
      */
