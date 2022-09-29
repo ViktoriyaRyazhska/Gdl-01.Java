@@ -16,7 +16,6 @@ public class MainApplication {
     static final String USER_DIR = "user.dir";
     static final String QUESTION_LIST = "task-list.txt";
     static final String taskListPath;
-    static final Scanner scannerNumbers = new Scanner(System.in);
     static final BufferedReader bufferReader = new BufferedReader(new InputStreamReader(System.in));
     static final Scanner scannerStrings = new Scanner(System.in);
 
@@ -103,23 +102,50 @@ public class MainApplication {
             case 11:
                 celsiusConverter.task11(bufferReader);
                 break;
+            case 14:
+                taskJoseSprintOne.task14(bufferReader);
+                break;
             case 16:
                 twoFighters.task16(bufferReader);
+                break;
+            case 19:
+                taskJoseSprintOne.task19(bufferReader);
                 break;
             case 21:
                 salaryBonus.task21(bufferReader);
                 break;
+            case 24:
+                taskJoseSprintOne.task24(bufferReader);
+                break;
             case 26:
                 boolToString.task26(bufferReader);
+                break;
+            case 29:
+                taskJoseSprintOne.task29(bufferReader);
                 break;
             case 31:
                 rentalCar.task31(bufferReader);
                 break;
+            case 34:
+                taskJoseSprintOne.task34(bufferReader);
+                break;
+            case 39:
+                taskJoseSprintOne.task39(bufferReader);
+                break;
+            case 44:
+                taskJoseSprintOne.task44(bufferReader);
+                break;
             case 47:
                 god.task47();
                 break;
+            case 50:
+                taskJoseSprintOne.task50(bufferReader);
+                break;
             case 51:
                 convertIntToString.task51(bufferReader);
+                break;
+            case 54:
+                taskJoseSprintOne.task54(bufferReader);
                 break;
             case 56:
                 playBanjo.task56(bufferReader);
