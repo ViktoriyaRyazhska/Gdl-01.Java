@@ -1,6 +1,8 @@
 package com.softserve.sprintone.jose;
 
 import com.softserve.sprintone.exception.TaskException;
+import com.softserve.sprintone.jose.util.*;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.util.*;
@@ -56,14 +58,19 @@ public class TaskJoseSprintOne {
             makeNegativeNumber(number);
         } catch (IOException ioException){
             throw new TaskException("Please, choose a correct number");
+        }catch (NumberFormatException numberFormatException){
+            throw new TaskException("Please, choose a correct number");
         }
     }
 
-    private void makeNegativeNumber(final int number) {
-        if(number>0)
-            System.out.printf("%d", number*(-1));
-        else
+    public int makeNegativeNumber(final int number) {
+        if(number>0) {
+            System.out.printf("%d", number * (-1));
+            return number * (-1);
+        }else {
             System.out.printf("%d", number);
+            return number;
+        }
     }
 
     /**
@@ -105,7 +112,7 @@ public class TaskJoseSprintOne {
             System.out.println("Type a second divisible number");
             int secondDivisibleNumber = Integer.parseInt(bufferedReader.readLine());
 
-            if(number > 0 || firstDivisibleNumber >0 || secondDivisibleNumber >0 ) {
+            if(number > 0 && firstDivisibleNumber >0 && secondDivisibleNumber >0 ) {
                 if (isDivisible(number, firstDivisibleNumber, secondDivisibleNumber))
                     System.out.println(String.format("true because %d is divisble by %d and %d", number, firstDivisibleNumber, secondDivisibleNumber));
                 else
@@ -137,6 +144,8 @@ public class TaskJoseSprintOne {
             final int secondValue = Integer.parseInt(bufferReader.readLine());
             System.out.println("The result is: "+isValidOperator(operator, firstValue, secondValue));
         }catch (IOException ioException){
+            throw new TaskException("Please, choose a correct number");
+        }catch (NumberFormatException numberFormatException){
             throw new TaskException("Please, choose a correct number");
         }
     }
@@ -174,6 +183,8 @@ public class TaskJoseSprintOne {
             int number = Integer.parseInt(bufferReader.readLine());
             printNumberInWords(number);
         }catch (IOException ioException){
+            throw new TaskException("Please, choose a correct number");
+        }catch (NumberFormatException numberFormatException){
             throw new TaskException("Please, choose a correct number");
         }
     }
@@ -219,9 +230,8 @@ public class TaskJoseSprintOne {
 
     /**
      * Task 34 will calculate the average for a student
-     * @param bufferReader
      */
-    public void task34(BufferedReader bufferReader) {
+    public void task34() {
         List<Double> notes = Arrays.asList(5.6D,9.9D,6.7D,10D,9D,7.2D);
         double suma = notes.stream().reduce(0D, Double::sum);
         double reformat = Math.round(suma/notes.size());
@@ -230,9 +240,8 @@ public class TaskJoseSprintOne {
 
     /**
      * Given a non-empty array of integers, return the result of multiplying the values together in order
-     * @param bufferReader
      */
-    public void task39(BufferedReader bufferReader) {
+    public void task39() {
         List<Integer> integerList = Arrays.asList(1,2,3,4);
         Integer multiply = integerList.stream().reduce(1, Math::multiplyExact);
         StringBuilder stringBuilder = new StringBuilder();
@@ -264,6 +273,8 @@ public class TaskJoseSprintOne {
                 throw new TaskException("The number will always be a positive integer greater than 0");
         }catch (IOException ioException){
             throw new TaskException("Please, choose a correct number");
+        }catch (NumberFormatException inputMismatchException){
+            throw new TaskException("Please, choose a correct number");
         }
     }
 
@@ -272,19 +283,37 @@ public class TaskJoseSprintOne {
      * @param bufferReader
      */
     public void task50(BufferedReader bufferReader) {
-        getTotalArea();
-    }
-
-    private void getTotalArea() {
-        System.out.print("The area of a square with side = 5 is ");
-        System.out.println(5*5);
-        System.out.print("The area of rectangle with lengh = 5 and breadth = 9 is ");
-        System.out.println(8*9);
-        System.out.print("The area of circle with radius = 4 is ");
-        System.out.println(2*Math.PI*4);
-        System.out.print("The area of triangle with base = 9 and height = 6 is ");
-        System.out.println(0.5*(9*6));
-
+        try {
+            System.out.println("Type number of the figure \n1. Square \n2. Triangle \n3. Rectangle \n4. Circle");
+            int number = Integer.parseInt(bufferReader.readLine());
+            CalculatorOperation calculatorOperation;
+            switch (number){
+                case 1:
+                    calculatorOperation = new Square(5D);
+                    System.out.printf("The area of a square is %.3f",calculatorOperation.getArea());
+                    break;
+                case 2:
+                    calculatorOperation = new Triangle(2D,9D);
+                    System.out.printf("The area of a Triangle is %.3f",calculatorOperation.getArea());
+                    break;
+                case 3:
+                    calculatorOperation = new Rectangle(7D, 3D);
+                    System.out.printf("The area of a Rectangle is %.3f",calculatorOperation.getArea());
+                    break;
+                case 4:
+                    calculatorOperation = new Circle(5.6D);
+                    System.out.printf("The area of a Circle is %.3f",calculatorOperation.getArea());
+                    break;
+                default:
+                    System.out.println("The shape has not been implemented");
+                    break;
+            }
+        }catch (IOException ioException){
+            throw new TaskException("Please, choose a correct number");
+        }catch (NumberFormatException inputMismatchException){
+            throw new TaskException("Please, choose a correct number");
+        }
+        System.out.println();
     }
 
     /**
@@ -303,5 +332,116 @@ public class TaskJoseSprintOne {
 
     private int makeOpposite(int number) {
         return number*(-1);
+    }
+
+    /**
+     * Task 59 will print in console the alphabet letter position
+     * @param bufferReader
+     */
+    public void task59(BufferedReader bufferReader) {
+        HashMap<String, Integer> alphabet = loadAlphabet();
+        try {
+            System.out.println("Type a letter of the alphabet");
+            String letter = bufferReader.readLine();
+             Integer index = alphabet.get(letter.toLowerCase());
+             if(Objects.isNull(index))
+                throw new TaskException("The specific letter has not founded");
+             else
+                 System.out.println("The index is ".concat(String.valueOf(index)));
+        } catch (IOException e) {
+            throw new TaskException("Please, choose a correct letter");
+        }
+
+    }
+
+    /**
+     * Will return a hashmap with letter and it's possition
+     * @return
+     */
+    private HashMap<String, Integer> loadAlphabet() {
+        HashMap<String, Integer> alphabet = new HashMap<>();
+        alphabet.put("a", 1);
+        alphabet.put("b", 2);
+        alphabet.put("c", 3);
+        alphabet.put("d", 4);
+        alphabet.put("e", 5);
+        alphabet.put("f", 6);
+        alphabet.put("g", 7);
+        alphabet.put("h", 8);
+        alphabet.put("i", 9);
+        alphabet.put("j", 10);
+        alphabet.put("k", 11);
+        alphabet.put("l", 12);
+        alphabet.put("m", 13);
+        alphabet.put("n", 14);
+        alphabet.put("o", 15);
+        alphabet.put("p", 16);
+        alphabet.put("q", 17);
+        alphabet.put("r", 18);
+        alphabet.put("s", 19);
+        alphabet.put("t", 20);
+        alphabet.put("u", 21);
+        alphabet.put("v", 22);
+        alphabet.put("w", 23);
+        alphabet.put("z", 24);
+        return  alphabet;
+    }
+
+    /**
+     * Task 64 will count the occurrences of a letter given
+     * @param bufferReader
+     */
+    public void task64(BufferedReader bufferReader) {
+        HashMap<String, Integer> alphabet = loadAlphabet();
+        try {
+            System.out.println("Type a word");
+            String word = bufferReader.readLine();
+            System.out.println("Type a letter of the alphabet");
+            String letter = bufferReader.readLine();
+            Integer index = alphabet.get(letter);
+            if(Objects.nonNull(index)) {
+                int occurrencesFounded = findOccurrences(word,letter);
+                System.out.println("The total occurrences is ".concat(String.valueOf(occurrencesFounded)));
+            }else
+                throw new TaskException("The specific letter has not founded");
+        }catch (IOException ioException){
+            throw new TaskException("Please, choose a correct letter");
+        }
+    }
+
+    /**
+     * Will return the total occurrences of a letter
+     * @param word that will use to search letter occurrences
+     * @param letter will find into word
+     * @return total occurrences
+     */
+    private int findOccurrences(String word, String letter) {
+        String str = word;
+        int count = 0;
+        int startFrom = 0;
+        boolean breakFlag = true;
+
+        while (breakFlag) {
+            int index = str.indexOf(letter, startFrom);
+
+            if (index >= 0) {
+                count = count + 1;
+                startFrom = index + 1;
+            } else {
+                breakFlag = false;
+            }
+        }
+        return count;
+    }
+
+    /**
+     * Task 69 will put a String object into ArrayList
+     * @param bufferReader
+     */
+    public void task69(BufferedReader bufferReader) {
+        List<String> stringList = new ArrayList<>();
+        stringList.add("Some String object");
+        System.out.printf("The object of a String list is -- %s --", stringList.get(0));
+        System.out.println();
     }
 }
