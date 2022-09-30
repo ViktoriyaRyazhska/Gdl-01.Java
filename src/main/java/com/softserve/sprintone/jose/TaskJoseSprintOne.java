@@ -419,16 +419,17 @@ public class TaskJoseSprintOne {
         String str = word;
         int count = 0;
         int startFrom = 0;
-        for (; ; ) {
+        boolean breakFlag = true;
+
+        while (breakFlag) {
             int index = str.indexOf(letter, startFrom);
 
             if (index >= 0) {
                 count = count + 1;
                 startFrom = index + 1;
             } else {
-                break;
+                breakFlag = false;
             }
-
         }
         return count;
     }
