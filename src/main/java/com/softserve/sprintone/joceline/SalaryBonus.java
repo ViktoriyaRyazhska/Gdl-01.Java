@@ -28,25 +28,27 @@ public class SalaryBonus {
                         System.out.println("Select if you have a bonus: \n1. Si\n2. No ");
                         option = Integer.parseInt(bufferedReader.readLine());
 
-                        if (option == 1) {
-                            int statedSalary = salary * 10;
-                            System.out.println("Your salary is £" + statedSalary);
-                        } else if (option == 2) {
-                            System.out.println("Your salary is £" + salary);
-                        } else {
-                            System.out.println("Select a valid answer");
-                        }
+                        System.out.println(checkBonus(option, salary));
                     } catch (NumberFormatException numberFormatException) {
                         option = 0;
                         System.out.println("Enter a valid number");
                     }
                 } while (!(option == 1 || option == 2));
-
-                //System.out.println(bonusTime(salary, bonus));
             } catch (IOException e) {
                 loopCheck = true;
                 System.out.println("Check your inputs");
             }
         } while (loopCheck);
+    }
+
+    /**
+     * This method calculates a salary checking if it has a bonus or not.
+     *
+     * @param option      this parameter is used to determine if it has a bonus or not.
+     * @param salaryValue this parameter is the salary entered by user.
+     * @return it returns a string message with the salary calculated.
+     */
+    public static String checkBonus(int option, int salaryValue) {
+        return option == 1 ? "Your salary is £" + (salaryValue * 10) : option == 2 ? "Your salary is £" + salaryValue : "Select a valid answer";
     }
 }

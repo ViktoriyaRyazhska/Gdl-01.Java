@@ -21,7 +21,6 @@ public class RentalCar {
                 System.out.println("Enter the number of days to rent the car ");
                 int RentedDays = Integer.parseInt(bufferedReader.readLine());
 
-                //int totalPrice = RentedDays > 6 ? (40 * RentedDays) - 50 : RentedDays > 2 ? (40 * RentedDays) - 20 : 40 * RentedDays;
                 System.out.println("The Total Price is: $" + rentalCarCost(RentedDays));
             } catch (IOException e) {
                 loopCheck = true;

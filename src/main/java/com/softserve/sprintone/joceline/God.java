@@ -19,7 +19,6 @@ public class God {
         Human[] humans = new Human[2];
         humans[0] = new Man();
         humans[1] = new Woman();
-        //people[0] = new Man
         return humans;
     }
 }
